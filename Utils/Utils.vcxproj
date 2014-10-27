@@ -79,6 +79,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Allocator.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="stdafx.h" />
