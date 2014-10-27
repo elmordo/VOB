@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GAMEDATA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\xjindr00\Downloads\VOB-master\VOB-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -83,6 +83,7 @@
     <ClInclude Include="Door.h" />
     <ClInclude Include="GraphBase.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -99,6 +100,7 @@
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GraphBase.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

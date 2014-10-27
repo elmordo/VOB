@@ -8,7 +8,10 @@
 #include <Auth\Encrypted.h>
 #include <Auth\PlainText.h>
 
+#include <GameData\RoomManager.h>
+
 using namespace VOB::Auth;
+using namespace VOB::GameData;
 using namespace std;
 
 void testManager(UserManager &manager)
@@ -47,6 +50,14 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	cout << "Testing encrypted test" << endl;
 	testManager(managerEncrypted);
+
+	// create room manager and try to create two rooms and connect them by door
+	RoomManager rm;
+	Room *r1 = rm.CreateRoom(), *r2 = rm.CreateRoom();
+	r1->SetName("Room 1");
+
+	Door *d = r1->CreateDoor(r2);
+
 
 	// wait for one character
 	cin.get();

@@ -10,7 +10,7 @@ namespace VOB
 
 		VOB_CREATE_EXCEPTION_EXPORTABLE(NowhereDoorException, VOB::Utils::Exception);
 
-		class Door :
+		class DllExport Door :
 			public GraphBase
 		{
 
@@ -18,6 +18,11 @@ namespace VOB
 			start room
 			*/
 			Room *from;
+
+			/*
+			if it is true, door is locked
+			*/
+			bool locked;
 
 			/*
 			destination
@@ -47,7 +52,39 @@ namespace VOB
 			*/
 			virtual ~Door();
 
-			friend Room;
+			/*
+			create instance and set it up
+			*/
+			template<class ALLOCATOR>
+			static Door *CreateInstance(Room *from, Room *to, ALLOCATOR alloc)
+			{
+				Door *retVal = alloc.allocate(1);
+
+				retVal->from = from;
+				retVal->to = to;
+
+				return retVal;
+			}
+
+			/*
+			return source room
+			*/
+			Room *GetFrom();
+
+			/*
+			return target room
+			*/
+			Room *GetTo();
+
+			/*
+			return locked flag status
+			*/
+			bool GetLocked() const;
+
+			/*
+			set new locked flag status
+			*/
+			void SetLocked(bool isLocked)
 
 		};
 

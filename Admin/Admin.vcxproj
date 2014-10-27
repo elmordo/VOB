@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\xjindr00\Downloads\VOB-master\VOB-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,6 +93,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Auth\Auth.vcxproj">
       <Project>{aec2e3c5-a5ef-4939-b1fd-5ad9b3709a4c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GameData\GameData.vcxproj">
+      <Project>{fd81d114-531a-42da-a822-aee9e73a64eb}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.vcxproj">
       <Project>{024af876-d808-422c-9433-7456a11a52c8}</Project>

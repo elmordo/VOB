@@ -13,7 +13,7 @@ namespace VOB
 
 		VOB_CREATE_EXCEPTION_EXPORTABLE(GraphCopyException, VOB::Utils::Exception);
 
-		class GraphBase
+		class DllExport GraphBase
 		{
 
 			/* element name */

@@ -11,6 +11,7 @@ namespace VOB
 		Door::Door()
 		{
 			from = to = 0x0;
+			locked = false;
 		}
 
 		Door::Door(Room *from, Room *to)
@@ -22,17 +23,32 @@ namespace VOB
 
 			this->from = from;
 			this->to = to;
-
-			from->outDoors.push_back(this);
-			to->inDoors.push_back(this);
+			locked = false;
 		}
 
 
 		Door::~Door()
 		{
-			// remove doors from lists of rooms
-			from->removeDoorFromList(from->outDoors, this);
-			to->removeDoorFromList(to->inDoors, this);
+		}
+
+		Room *Door::GetFrom()
+		{
+			return from;
+		}
+
+		Room *Door::GetTo()
+		{
+			return to;
+		}
+
+		bool Door::GetLocked() const
+		{
+			return locked;
+		}
+
+		void Door::SetLocked(bool isLocked)
+		{
+			locked = isLocked;
 		}
 
 	}
