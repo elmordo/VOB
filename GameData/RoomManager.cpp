@@ -23,9 +23,15 @@ namespace VOB
 			}
 		}
 
-		Room *RoomManager::CreateRoom()
+		Room *RoomManager::CreateRoom(const string &name, const string &description)
 		{
 			Room *room = roomAllocator.allocate(1);
+
+			// set name and description
+			room->SetDesc(description);
+			room->SetName(name);
+
+			// add it into room list
 			rooms.push_back(room);
 
 			return room;

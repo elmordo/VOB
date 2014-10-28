@@ -60,7 +60,7 @@ namespace VOB
 			/*
 			create door from current instance of room to another
 			*/
-			Door *CreateDoor(Room *to);
+			Door *CreateDoor(Room *to, const string &name=string(), const string &description=string());
 
 			/*
 			return constant reference on list of in doors

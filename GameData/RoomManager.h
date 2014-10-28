@@ -57,8 +57,9 @@ namespace VOB
 
 			/*
 			create new instance of room and insert it into manager
+			optionaly set name and description
 			*/
-			Room *CreateRoom();
+			Room *CreateRoom(const string &name=string(), const string &description=string());
 
 			/*
 			return list of rooms

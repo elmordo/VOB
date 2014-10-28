@@ -84,7 +84,7 @@ namespace VOB
 			/*
 			set new locked flag status
 			*/
-			void SetLocked(bool isLocked)
+			void SetLocked(bool isLocked);
 
 		};
 

@@ -58,10 +58,12 @@ namespace VOB
 			}
 		}
 
-		Door *Room::CreateDoor(Room *to)
+		Door *Room::CreateDoor(Room *to, const string &name, const string &description)
 		{
 			// create new instance
 			Door *door = Door::CreateInstance(this, to, doorAllocator);
+			door->SetName(name);
+			door->SetDesc(description);
 
 			// insert it into out door list
 			outDoors.push_back(door);

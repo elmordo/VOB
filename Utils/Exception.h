@@ -2,6 +2,7 @@
 
 #include <exception>
 #include <cstring>
+#include <cstdlib>
 #include "common.h"
 
 using namespace std;

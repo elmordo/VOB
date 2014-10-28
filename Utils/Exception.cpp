@@ -14,6 +14,7 @@ namespace VOB
 
 		Exception::Exception(const char *msg, int code) 
 		{
+			this->msg = 0x0;
 			this->code = code;
 			copyString(&this->msg, msg);
 		}
@@ -40,10 +41,11 @@ namespace VOB
 			int length = strlen(source);
 
 			*target = new char[length + 1];
-			char *tChar = *target;
 
+			char *tChar = *target;
 			tChar[length] = 0x0;
-			strcpy_s(tChar, length, source);
+
+			memcpy(tChar, source, length);
 		}
 
 		const char *Exception::what() const
